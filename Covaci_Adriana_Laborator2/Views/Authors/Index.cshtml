@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Covaci_Adriana_Laborator2.Models.Author>
+
+@{
+    ViewData["Title"] = "Authors Index";
+}
+
+<p>
+    <a asp-controller="Authors" asp-action="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            @* <th>Books</th> *@
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var author in Model)
+        {
+            <tr>
+                <td>@author.FirstName</td>
+                <td>@author.LastName</td>
+                @* <td> *@
+                @*     @if (author.Books != null && author.Books.Any()) *@
+                @*     { *@
+                @*         @foreach (var book in author.Books) *@
+                @*         { *@
+                @*             <div>@book.Title</div> *@
+                @*         } *@
+                @*     } *@
+                @*     else *@
+                @*     { *@
+                @*         <span>No books</span> *@
+                @*     } *@
+                @* </td> *@
+                <td>
+                    <a asp-controller="Authors" asp-action="Edit" asp-route-id="@author.ID">Edit</a> |
+                    <a asp-controller="Authors" asp-action="Details" asp-route-id="@author.ID">Details</a> |
+                    <a asp-controller="Authors" asp-action="Delete" asp-route-id="@author.ID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
