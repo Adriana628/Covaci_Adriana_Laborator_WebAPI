@@ -23,7 +23,10 @@ namespace Covaci_Adriana_Laborator2.Controllers
         {
             return View();
         }
-
+        public IActionResult Chat()
+        {
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();
