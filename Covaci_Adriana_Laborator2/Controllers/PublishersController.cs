@@ -8,8 +8,10 @@ using Microsoft.EntityFrameworkCore;
 using Covaci_Adriana_Laborator2.Data;
 using Covaci_Adriana_Laborator2.Models;
 using Covaci_Adriana_Laborator2.Models.LibraryViewModels;
+using Microsoft.AspNetCore.Authorization;
 namespace Covaci_Adriana_Laborator2.Controllers
 {
+    [Authorize(Policy = "OnlySales")]
     public class PublishersController : Controller
     {
         private readonly LibraryContext _context;
